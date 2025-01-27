@@ -67,7 +67,7 @@ export default function Home() {
       isOpen={showModal}
       onClose={()=>{setShowModal(false)}}
       title={modalType === "join" ? "Join Meeting": "Start Meeting"}
-      isJoingModal = {modalType === "join"}
+      isJoinMeeting = {modalType === "join"}
       />
       </>) : (<>
       candidate goes here

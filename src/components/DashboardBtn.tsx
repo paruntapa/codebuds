@@ -12,7 +12,7 @@ const DashboardBtn = () => {
 
   return (
     <Link href={"/dashboard"}>
-    <Button className='gap-2 font-medium text-white p-5 text-sm ' size={"sm"}>
+    <Button className='gap-2 font-medium bg-blue-700 hover:bg-blue-800 text-white p-5 text-sm ' size={"sm"}> 
         <SparklesIcon className="size-4"/>
         Dashboard
 
