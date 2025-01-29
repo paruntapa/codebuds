@@ -10,6 +10,7 @@ import { useState } from "react"
 
 const meetings = () => {
   const { id } = useParams()
+
   const {isLoaded} = useUser()
   const {call, isCallLoading } = useGetCallById(id)
   const [isSetupComplete, setIsSetupComplete ] = useState(false);
