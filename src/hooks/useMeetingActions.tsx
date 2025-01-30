@@ -10,7 +10,8 @@ const useMeetingActions = () => {
     if (!client) return;
 
     try {
-      const id = crypto.randomUUID()
+      const id = crypto.randomUUID();
+
       const call = client.call("default", id);
 
       await call.getOrCreate({
@@ -22,10 +23,10 @@ const useMeetingActions = () => {
         },
       });
 
-      router.push(`/meeting/${call.id}`);
+      router.push(`/meeting/${id}`);
       toast.success("Meeting Created");
     } catch (error) {
-      console.error(error);
+      console.error(`error is this ${error}`);
       toast.error("Failed to create meeting");
     }
   };
@@ -34,8 +35,10 @@ const useMeetingActions = () => {
     if (!client) return toast.error("Failed to join meeting. Please try again.");
     router.push(`/meeting/${callId}`);
   };
-
+  
   return { createInstantMeeting, joinMeeting };
+
 };
+
 
 export default useMeetingActions;

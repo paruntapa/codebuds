@@ -2,26 +2,24 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import useMeetingAction from "@/hooks/useMeetingAction";
+import useMeetingActions from "@/hooks/useMeetingActions";
 
-interface MeetingModalInter {
-    isOpen: boolean;
-    onClose: () => void;
-    title: string;
-    isJoinMeeting: boolean;
+interface MeetingModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  isJoinMeeting: boolean;
 }
 
-const MeetingModal = ({isOpen, onClose, title, isJoinMeeting}: MeetingModalInter) => {
+function MeetingModal({ isOpen, onClose, title, isJoinMeeting }: MeetingModalProps) {
   const [meetingUrl, setMeetingUrl] = useState("");
-  const { createInstantMeeting, joinMeeting } =useMeetingAction();
+  const { createInstantMeeting, joinMeeting } = useMeetingActions();
 
   const handleStart = () => {
-    if(isJoinMeeting) {
-      // if full url, then extract meeting id
+    if (isJoinMeeting) {
+      // if it's a full URL extract meeting ID
       const meetingId = meetingUrl.split("/").pop();
-      if(meetingId) {
-        joinMeeting(meetingId);
-      }
+      if (meetingId) joinMeeting(meetingId);
     } else {
       createInstantMeeting();
     }
@@ -29,7 +27,7 @@ const MeetingModal = ({isOpen, onClose, title, isJoinMeeting}: MeetingModalInter
     setMeetingUrl("");
     onClose();
   };
-  
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px]">
@@ -57,7 +55,6 @@ const MeetingModal = ({isOpen, onClose, title, isJoinMeeting}: MeetingModalInter
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
-
-export default MeetingModal
+export default MeetingModal;

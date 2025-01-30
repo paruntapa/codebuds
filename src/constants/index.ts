@@ -98,6 +98,34 @@ export const CODING_QUESTIONS: CodeQuestion[] = [
     ],
   },
   {
+    id: "maximum-number",
+    title: "Maximum-Number",
+    description:
+      "Write a JavaScript program to find the maximum number in an array.",
+    examples: [
+      {
+        input: "nums = [2,7,11,15]",
+        output: "[15]",
+        explanation: "Because index[3] is the maximum number, hence return 15",
+      },
+    ],
+    starterCode: {
+      javascript: `function findMaxNumber(arr) {
+  // Write your solution here
+  
+}`,
+      python: `def findMaxNumber(arr):
+    # Write your solution here
+    pass`,
+      java: `class Solution {
+    public int[] findMaxNumber(int[] arr, int target) {
+        // Write your solution here
+        
+    }
+}`,
+    },
+  },
+  {
     id: "reverse-string",
     title: "Reverse String",
     description:
