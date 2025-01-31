@@ -23,6 +23,8 @@ const useMeetingActions = () => {
         },
       });
 
+      console.log("passwed getcreate")
+
       router.push(`/meeting/${id}`);
       toast.success("Meeting Created");
     } catch (error) {

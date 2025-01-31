@@ -25,7 +25,8 @@ const StreamVideoProvider = ({ children }: defineChildren) => {
         image: user?.imageUrl,
       },
       tokenProvider: streamTokenProvider,
-    });
+      
+    }, );
 
     setStreamVideoClient(client);
   }, [user, isLoaded]);

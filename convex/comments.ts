@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 
 // add a new comment
 export const addComment = mutation({
@@ -23,7 +23,7 @@ export const addComment = mutation({
   });
 
   // get all comments for an interview
-  export const getComments = mutation({
+  export const getComments = query({
     args: {
         interviewId: v.id("interviews")
     },
